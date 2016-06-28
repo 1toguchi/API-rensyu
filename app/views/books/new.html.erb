@@ -1,13 +1,15 @@
-<div class='content'>
-  <div id="search-box">
-    <%= form_for @books do |form|  %>
-        <%=  form.text_field :detail %>
-        <%= form.submit %> 
-    <% end %>
+<% if @books.present? %>
+  <div class='content'>
+    <div id="search-box">
+      <%= form_for @books do |form|  %>
+          <%= form.text_field :detail %>
+          <%= form.submit %>
+      <% end %>
+    </div>
+    <h2>検索結果</h2>
+    <div id='book_list'>
+      <!-- コメントアウトしておく -->
+      <%= render 'shared/book_list' %>
+    </div>
   </div>
-  <h2>検索結果</h2>
-  <div id='book_list'>
-    <!-- コメントアウトしておく -->
-    <%= render  'shared/book_list' %> 
-  </div>
-</div>
+<% end %>
