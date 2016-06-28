@@ -1,11 +1,10 @@
 <div class='content'>
   <div id="search-box">
-    <% if @books.present? %>
+    
     <%= form_for @books do |f|  %>
         <%= f.text_field :detail %>
         <%= f.submit %>
      <% end %>
-    <% end %>
   </div>
   <h2>検索結果</h2>
   <div id='book_list'>
