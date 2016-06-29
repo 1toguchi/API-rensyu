@@ -24,6 +24,8 @@ class BooksController < ApplicationController
         )
         @books << book
       end
+    else
+      params[:keyword]
     end
   end
 
