@@ -25,7 +25,9 @@ class BooksController < ApplicationController
         @books << book
       end
     else
-      params[:keyword]
+      params[:keyword] 
+      #このparams[:keyword]は当然nilかblankになる。
+      #なぜならl.27のelseはif params[:keyword].present?がfalseの状態だから
     end
   end
 
