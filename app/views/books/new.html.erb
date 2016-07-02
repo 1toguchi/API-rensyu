@@ -1,10 +1,10 @@
 <div class='content'>
   <div id="search-box">
-    <% if @books.present?  %>
-    <%= form_for @books do |f|  %>
+    <% if @books.present?  %><%# インデントを揃えること%>
+      <%= form_for @books do |f|  %><%# ここ、keywordの検索の入力フォームと口コミの入力フォームを混同しちゃってる可能性があるよ %>
         <%= f.text_field :detail %>
         <p><%= f.submit "検索" %></p>
-    <% end %>
+      <% end %>
     <% end %>
   </div>
   <h2>検索結果</h2>
