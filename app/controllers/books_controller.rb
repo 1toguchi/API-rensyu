@@ -34,7 +34,7 @@ class BooksController < ApplicationController
   def form
   end
 
-  def index
+  def home
   end
 
   def create
