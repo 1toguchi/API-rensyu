@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(version: 20160619142400) do
 
   create_table "books", force: :cascade do |t|
-    t.string   "title",      limit: 255,   null: false
-    t.text     "detail",     limit: 65535
-    t.binary   "image",      limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "title",      null: false
+    t.text     "detail"
+    t.binary   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

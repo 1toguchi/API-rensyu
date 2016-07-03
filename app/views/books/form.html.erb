@@ -1,0 +1,6 @@
+
+キーワード
+<%= form_tag(new_book_path, method: :get) do %>
+  <%= text_field :books, :keyword %>
+  <%= submit_tag '検索' %>
+<% end %>
