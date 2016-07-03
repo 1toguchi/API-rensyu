@@ -24,6 +24,10 @@ class BooksController < ApplicationController
         )
         @books << book
       end
+    else
+      params[:keyword] 
+      #このparams[:keyword]は当然nilかblankになる。
+      #なぜならl.27のelseはif params[:keyword].present?がfalseの状態だから
     end
   end
 
@@ -32,4 +36,19 @@ class BooksController < ApplicationController
 
   def index
   end
+
+  def create
+    @books= Book.new(book_params)
+    if @books.save #saveするかどうかの判定はvalidationとかによる。なのでmodels/Book.rbにvalidationを追加したほうがいいかもね
+      #redirect_to :path, notice: '保存しました。'みたいな奴がないからここで止まってしまう。
+    else
+      render "new"
+    end
+  end
+
+  private
+  def book_params
+    params.require(:books).permit(:title, :detail, :image)
+    #requireの引数はbooks複数形ではなく単数形だと思われる。
+  end #endのインデントはきちんとそろえること(こういう細かいところレビューの時に結構見られるから注意)
 end
